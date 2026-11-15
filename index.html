@@ -82,19 +82,24 @@
             gap: 4rem;
         }
         .project-card {
-            display: flex;
-            flex-direction: row;
-            gap: 2.5rem; /* Balanced gap */
-            align-items: flex-start; /* ALIGNS TOPS OF TEXT AND IMAGE */
-            padding: 2rem;
             border: 1px solid #222;
             border-radius: 16px;
+            padding: 2rem;
+            background: var(--card);
             transition: all 0.3s ease;
         }
         .project-card:hover {
             transform: translateY(-4px);
-            background: #1e1e1e;
             border-color: var(--accent);
+        }
+        .project-header {
+            margin-bottom: 1.5rem;
+        }
+        .project-body {
+            display: flex;
+            flex-direction: row;
+            gap: 2.5rem;
+            align-items: flex-start; /* Aligns tops of breakdown and image */
         }
         .project-content { flex: 1.6; }
         .project-visual { 
@@ -102,8 +107,8 @@
             border-radius: 12px; 
             overflow: hidden;
             border: 1px solid #333;
-            min-width: 320px; /* Keeps visual consistent */
-            max-height: 500px; /* Prevents visual from becoming too tall */
+            min-width: 320px;
+            max-height: 500px;
         }
         .project-visual img {
             width: 100%;
@@ -126,7 +131,7 @@
             background: #111;
             padding: 1.5rem;
             border-radius: 12px;
-            margin-top: 1rem;
+            margin-top: 0; /* No margin here as it's the top of the body row */
             border: 1px solid #222;
         }
         .breakdown h4 {
@@ -173,7 +178,7 @@
         .copyright { margin-top: 2rem; font-size: 0.8rem; color: #444; }
 
         @media (max-width: 850px) {
-            .project-card { flex-direction: column; }
+            .project-body { flex-direction: column; }
             .project-visual { width: 100%; height: 250px; }
         }
     </style>
@@ -199,59 +204,67 @@
     <div class="project-grid">
         <!-- Project 1 -->
         <div class="project-card card-legal">
-            <div class="project-content">
+            <div class="project-header">
                 <h2>Legal Zoom - Business Time</h2>
                 <span class="software-tag">Maya</span>
                 <p><strong style="color:white">Role:</strong> CG Generalist / Rigging</p>
-                <div class="breakdown">
-                    <h4>The Challenge</h4>
-                    <p>For this commercial, I set an ambitious goal: creating a soft-surface deformation rig combined with a full skeleton to achieve high-fidelity organic movement.</p>
-                    <h4>The Technical Pivot</h4>
-                    <p>To meet a tight commercial deadline, I analyzed the pipeline and pivoted to a high-quality lattice-based system. This allowed us to maintain the visual integrity of the character while ensuring a stable, predictable result for the final delivery.</p>
+            </div>
+            <div class="project-body">
+                <div class="project-content">
+                    <div class="breakdown">
+                        <h4>The Challenge</h4>
+                        <p>For this commercial, I set an ambitious goal: creating a soft-surface deformation rig combined with a full skeleton to achieve high-fidelity organic movement.</p>
+                        <h4>The Technical Pivot</h4>
+                        <p>To meet a tight commercial deadline, I analyzed the pipeline and pivoted to a high-quality lattice-based system. This allowed us to maintain the visual integrity of the character while ensuring a stable, predictable result for the final delivery.</p>
+                    </div>
+                </div>
+                <div class="project-visual">
+                    <img src="images/project1.png" alt="Legal Zoom Project">
                 </div>
             </div>
-            <div class="project-visual">
-                <img src="images/project1.png" alt="Legal Zoom Project">
-            </div>
-        </div>
 
         <!-- Project 2 -->
         <div class="project-card card-dominos">
-            <div class="project-content">
+            <div class="project-header">
                 <h2>Dominos - Drive Through</h2>
                 <span class="software-tag">Maya</span>
                 <p><strong style="color:white">Role:</strong> CG Generalist / Animation</p>
-                <div class="breakdown">
-                    <h4>The Challenge</h4>
-                    <p>This project involved heavy iteration and frequent client feedback, which compressed our delivery window significantly.</p>
-                    <h4>The Strategy</h4>
-                    <p>I focused on proactive communication and "looking ahead" to anticipate the client's desired final look, allowing us to make adjustments more efficiently and keep the project moving forward smoothly.</p>
+            </div>
+            <div class="project-body">
+                <div class="project-content">
+                    <div class="breakdown">
+                        <h4>The Challenge</h4>
+                        <p>This project involved heavy iteration and frequent client feedback, which compressed our delivery window significantly.</p>
+                        <h4>The Strategy</h4>
+                        <p>I focused on proactive communication and "looking ahead" to anticipate the client's desired final look, allowing us to make adjustments more efficiently and keep the project moving forward smoothly.</p>
+                    </div>
+                </div>
+                <div class="project-visual">
+                    <img src="images/project2.png" alt="Dominos Project">
                 </div>
             </div>
-            <div class="project-visual">
-                <img src="images/project2.png" alt="Dominos Project">
-            </div>
-        </div>
 
         <!-- Project 3 -->
         <div class="project-card card-cash4clones">
-            <div class="project-content">
+            <div class="project-header">
                 <h2>Cash4Clones (Thesis)</h2>
                 <span class="software-tag">Maya, Substance Painter</span>
                 <p><strong style="color:white">Role:</strong> Character Lead / Technical Artist</p>
-                <div class="breakdown">
-                    <h4>The Scope</h4>
-                    <p>A full-cycle thesis project where I owned the character's lifecycle: modeling, rigging, and look development.</p>
-                    <h4>The Technical Deep Dive</h4>
-                    <p>My priority was building a "production-ready" asset. I ensured the rig was robust enough for complex animation while maintaining consistency across multiple environments for the rest of the team.</p>
+            </div>
+            <div class="project-body">
+                <div class="project-content">
+                    <div class="breakdown">
+                        <h4>The Scope</h4>
+                        <p>A full-cycle thesis project where I owned the character's lifecycle: modeling, rigging, and look development.</p>
+                        <h4>The Technical Deep Dive</h4>
+                        <p>My priority was building a "production-ready" asset. I ensured the rig was robust enough for complex animation while maintaining consistency across multiple environments for the rest of the team.</p>
+                    </div>
+                </div>
+                <div class="project-visual">
+                    <img src="images/project3.png" alt="Cash4Clones Project">
                 </div>
             </div>
-            <div class="project-visual">
-                <img src="images/project3.png" alt="Cash4Clones Project">
-            </div>
-        </div>
     </div>
-</div>
 
 <footer>
     <p>Connect with me:</p>
